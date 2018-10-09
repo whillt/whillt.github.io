@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Blog" />
+  <meta name="keywords" content="JAVA," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="初来乍到 多多关照">
-<meta property="og:type" content="website">
-<meta property="og:title" content="whillt&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="JDK8 lambda表达式​     JDK8之前 Java是不支持函数式编程的 所谓的函数编程 可以理解是将一个函数 作为一个参数进行传递">
+<meta name="keywords" content="JAVA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDK8 lambda表达式">
+<meta property="og:url" content="http://yoursite.com/2018/10/09/JDK8 lamdbda表达式/index.html">
 <meta property="og:site_name" content="whillt&#39;s blog">
-<meta property="og:description" content="初来乍到 多多关照">
+<meta property="og:description" content="JDK8 lambda表达式​     JDK8之前 Java是不支持函数式编程的 所谓的函数编程 可以理解是将一个函数 作为一个参数进行传递">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-09T07:24:56.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="whillt&#39;s blog">
-<meta name="twitter:description" content="初来乍到 多多关照">
+<meta name="twitter:title" content="JDK8 lambda表达式">
+<meta name="twitter:description" content="JDK8 lambda表达式​     JDK8之前 Java是不支持函数式编程的 所谓的函数编程 可以理解是将一个函数 作为一个参数进行传递">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/09/JDK8 lamdbda表达式/"/>
 
 
 
 
 
-  <title>whillt's blog</title>
+  <title>JDK8 lambda表达式 | whillt's blog</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,9 +276,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -307,9 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/09/JDK8 lamdbda表达式/" itemprop="url">JDK8 lambda表达式</a></h1>
+          <h1 class="post-title" itemprop="name headline">JDK8 lambda表达式</h1>
         
 
         <div class="post-meta">
@@ -413,16 +412,30 @@
       
 
       
-        
-          <h2 id="JDK8-lambda表达式"><a href="#JDK8-lambda表达式" class="headerlink" title="JDK8 lambda表达式"></a>JDK8 lambda表达式</h2><p>​     JDK8之前 Java是不支持函数式编程的 所谓的函数编程 可以理解是将一个函数 作为一个参数进行传递</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/09/JDK8 lamdbda表达式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="JDK8-lambda表达式"><a href="#JDK8-lambda表达式" class="headerlink" title="JDK8 lambda表达式"></a>JDK8 lambda表达式</h2><p>​     JDK8之前 Java是不支持函数式编程的 所谓的函数编程 可以理解是将一个函数 作为一个参数进行传递</p>
+<a id="more"></a>
+<ul>
+<li><p>什么场景下可以使用lambda</p>
+<pre><code>&quot;函数接口&quot; 能够接收lambds表达式的参数形式 是一个只包含一个方法的接口 只包含一个方法的接口称为&quot;函数接口&quot; 
+</code></pre></li>
+<li><p><strong>认识lambds表达式</strong>     </p>
+<pre><code>首先引入一个示例  如果在JDK8之前按照Java传统语法编写一个线程
+</code></pre><p>  ​    new Thread(new Runable(){<br>  ​        @Override<br>  ​        public void run(){<br>  ​            //do something<br>  ​        }<br>  ​    })</p>
+</li>
+<li><p>无参类型的使用<br>  ​<br>  ​    使用lambda表达式只需要使用一句话可代替上面使用匿名内部类的方式<br>  ​    new Thread(()-&gt; System.out.println(“lambds”));</p>
+</li>
+<li><p>带参类型的使用<br>​<br>   如果要给一个字符串列表通过自定义比较器 按照字符串长度进行排序<br>   ​    List<string>names = Arrays.asList(“carry”,”jane”);<br>   ​    Collections.sort(names , new Comparator<string>()){<br>   ​    @Override<br>   ​     public int compare(String o1,String o2){<br>   ​         return o2.compareTo(o1);<br>   ​     }<br>   ​    }</string></string></p>
+</li>
+</ul>
+<pre><code>       使用JDK8 lambds表达式写法
+       List&lt;String&gt; names = Arrays.asList(&quot;carry&quot;,&quot;jane&quot;);
+       Collections.sort(names,(o1, o2)-&gt;{
+       return compare逻辑
+       });
+​    
+​    
+    上述代码跟匿名内部类的作用是一样的 除了省略接口名和方法名 代码把参数表的类型也省略了 Java的类型推断机制 编译器能够根据上下文信息推断出参数类型 当然也存在推断失败的时候 这时就必须手动指明参数类型了 (如泛型) JAVA是强类型语言 每个变量和对象都必须
+</code></pre>
       
     </div>
     
@@ -432,198 +445,70 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="刘裕 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="刘裕 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/单机百万并发--操作系统研究/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘裕">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="whillt's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/09/单机百万并发--操作系统研究/" itemprop="url">单机百万并发长连接</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T15:10:50+08:00">
-                2018-10-09
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-09T15:24:41+08:00">
-                2018-10-09
-              </time>
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
           
-            
-          
-
-          
-          
-             <span id="/2018/10/09/单机百万并发--操作系统研究/" class="leancloud_visitors" data-flag-title="单机百万并发长连接">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  481
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>##单机百万并发长连接</p>
-<p>如何突破服务器的设置 为单台服务器设置更大的并发数:</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/09/单机百万并发--操作系统研究/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/09/单机百万并发--操作系统研究/" rel="next" title="单机百万并发长连接">
+                <i class="fa fa-chevron-left"></i> 单机百万并发长连接
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -633,10 +518,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -644,6 +530,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -664,8 +554,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -754,6 +653,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK8-lambda表达式"><span class="nav-number">1.</span> <span class="nav-text">JDK8 lambda表达式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -903,6 +818,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
